@@ -2,6 +2,7 @@ package santannaf.people.core.usecase
 
 import jakarta.inject.Named
 import java.util.UUID
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.runBlocking
@@ -20,8 +21,8 @@ class SavePeopleUseCase(
 
         runBlocking {
             awaitAll(
-                async { saveProvider.saveCache(triple) },
-                async { saveProvider.saveDatabase(people) }
+                async(Dispatchers.IO) { saveProvider.saveCache(triple) },
+                async(Dispatchers.IO) { saveProvider.saveDatabase(people) }
             )
         }
 
