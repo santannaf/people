@@ -2,8 +2,10 @@ package santannaf.people.rest
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import santannaf.demo.analyse.queries.analysequeries.annotation.EnableQueryAnalysis
 
 @SpringBootApplication(scanBasePackages = ["santannaf"])
+@EnableQueryAnalysis
 class RestApplication
 
 fun main(args: Array<String>) {
