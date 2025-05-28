@@ -5,7 +5,7 @@ import org.springframework.boot.runApplication
 import santannaf.demo.analyse.queries.analysequeries.annotation.EnableQueryAnalysis
 
 @SpringBootApplication(scanBasePackages = ["santannaf"])
-@EnableQueryAnalysis
+@EnableQueryAnalysis(appName = "customer-web")
 class RestApplication
 
 fun main(args: Array<String>) {
